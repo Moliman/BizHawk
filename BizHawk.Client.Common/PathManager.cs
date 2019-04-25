@@ -257,9 +257,23 @@ namespace BizHawk.Client.Common
 			return Path.Combine(filesystemDir, filesystemSafeName);
 		}
 
+		private static string FileNameFromPath()
+		{
+			const string OPEN_ROM_CODE = "*OpenRom*";
+			if (Global.Config.FileNameForSaving && Global.Config.RecentRoms.MostRecent.Contains(OPEN_ROM_CODE))
+			{
+				// If someone have a better solutions, go for it
+				var fileName = Global.Config.RecentRoms.MostRecent
+					.Remove(0, Global.Config.RecentRoms.MostRecent.LastIndexOfAny(Path.GetInvalidFileNameChars()) + 1);
+
+				return Path.GetFileNameWithoutExtension(fileName);
+			}
+			throw new Exception("No rom open");
+		}
+
 		public static string SaveRamPath(GameInfo game)
 		{
-			var name = FilesystemSafeName(game);
+			var name = Global.Config.FileNameForSaving ? FileNameFromPath() : FilesystemSafeName(game);
 			if (Global.MovieSession.Movie.IsActive)
 			{
 				name += "." + Path.GetFileNameWithoutExtension(Global.MovieSession.Movie.Filename);

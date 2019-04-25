@@ -53,6 +53,7 @@ namespace BizHawk.Client.EmuHawk
 			SingleInstanceModeCheckbox.Checked = Global.Config.SingleInstanceMode;
 
 			BackupSRamCheckbox.Checked = Global.Config.BackupSaveram;
+			FileNameForSavingCheckBox.Checked = Global.Config.FileNameForSaving;
 			AutosaveSRAMCheckbox.Checked = Global.Config.AutosaveSaveRAM;
 			groupBox2.Enabled = AutosaveSRAMCheckbox.Checked;
 			AutosaveSaveRAMSeconds = Global.Config.FlushSaveRamFrames / 60;
@@ -87,6 +88,7 @@ namespace BizHawk.Client.EmuHawk
 			Global.Config.SingleInstanceMode = SingleInstanceModeCheckbox.Checked;
 
 			Global.Config.BackupSaveram = BackupSRamCheckbox.Checked;
+			Global.Config.FileNameForSaving = FileNameForSavingCheckBox.Checked;
 			Global.Config.AutosaveSaveRAM = AutosaveSRAMCheckbox.Checked;
 			Global.Config.FlushSaveRamFrames = AutosaveSaveRAMSeconds * 60;
 			if (GlobalWin.MainForm.AutoFlushSaveRamIn > Global.Config.FlushSaveRamFrames)

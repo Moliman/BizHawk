@@ -133,6 +133,7 @@ namespace BizHawk.Client.Common
 		public string Update_LatestVersion = "";
 		public string Update_IgnoreVersion = "";
 		public bool CDLAutoSave = true, CDLAutoStart = true, CDLAutoResume = true;
+		public bool FileNameForSaving = false; // Else it will use the DB name
 
 		/// <summary>
 		/// Makes a .bak file before any saveram-writing operation (could be extended to make timestamped backups)

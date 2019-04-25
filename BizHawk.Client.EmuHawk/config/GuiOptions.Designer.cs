@@ -48,7 +48,10 @@
             this.EnableContextMenuCheckbox = new System.Windows.Forms.CheckBox();
             this.PauseWhenMenuActivatedCheckbox = new System.Windows.Forms.CheckBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.FileNameForSavingCheckBox = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.AutosaveSRAMtextBox = new System.Windows.Forms.NumericUpDown();
             this.AutosaveSRAMradioButton1 = new System.Windows.Forms.RadioButton();
             this.label8 = new System.Windows.Forms.Label();
@@ -71,8 +74,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.LogWindowAsConsoleCheckbox = new System.Windows.Forms.CheckBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -85,7 +86,7 @@
             // OkBtn
             // 
             this.OkBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.OkBtn.Location = new System.Drawing.Point(280, 425);
+            this.OkBtn.Location = new System.Drawing.Point(280, 449);
             this.OkBtn.Name = "OkBtn";
             this.OkBtn.Size = new System.Drawing.Size(60, 23);
             this.OkBtn.TabIndex = 0;
@@ -97,7 +98,7 @@
             // 
             this.CancelBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.CancelBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.CancelBtn.Location = new System.Drawing.Point(346, 425);
+            this.CancelBtn.Location = new System.Drawing.Point(346, 449);
             this.CancelBtn.Name = "CancelBtn";
             this.CancelBtn.Size = new System.Drawing.Size(60, 23);
             this.CancelBtn.TabIndex = 1;
@@ -115,7 +116,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(394, 402);
+            this.tabControl1.Size = new System.Drawing.Size(394, 426);
             this.tabControl1.TabIndex = 2;
             // 
             // tabPage1
@@ -132,7 +133,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(386, 376);
+            this.tabPage1.Size = new System.Drawing.Size(386, 400);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "General";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -279,6 +280,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.FileNameForSavingCheckBox);
             this.tabPage3.Controls.Add(this.groupBox2);
             this.tabPage3.Controls.Add(this.AutosaveSRAMCheckbox);
             this.tabPage3.Controls.Add(this.panel1);
@@ -295,10 +297,20 @@
             this.tabPage3.Controls.Add(this.LogWindowAsConsoleCheckbox);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(386, 376);
+            this.tabPage3.Size = new System.Drawing.Size(386, 400);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Advanced";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // FileNameForSavingCheckBox
+            // 
+            this.FileNameForSavingCheckBox.AutoSize = true;
+            this.FileNameForSavingCheckBox.Location = new System.Drawing.Point(6, 62);
+            this.FileNameForSavingCheckBox.Name = "FileNameForSavingCheckBox";
+            this.FileNameForSavingCheckBox.Size = new System.Drawing.Size(235, 17);
+            this.FileNameForSavingCheckBox.TabIndex = 28;
+            this.FileNameForSavingCheckBox.Text = "Use file name instead of DB name for saving";
+            this.FileNameForSavingCheckBox.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -309,13 +321,31 @@
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.AutosaveSRAMradioButton2);
             this.groupBox2.Controls.Add(this.AutosaveSRAMradioButton3);
-            this.groupBox2.Location = new System.Drawing.Point(27, 59);
+            this.groupBox2.Location = new System.Drawing.Point(27, 82);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(0);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(265, 60);
             this.groupBox2.TabIndex = 27;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "AutoSaveRAM";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(9, 34);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(33, 13);
+            this.label10.TabIndex = 29;
+            this.label10.Text = "every";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(6, 16);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(225, 13);
+            this.label9.TabIndex = 28;
+            this.label9.Text = "Save SaveRAM to .AutoSaveRAM.SaveRAM";
             // 
             // AutosaveSRAMtextBox
             // 
@@ -374,7 +404,7 @@
             // AutosaveSRAMCheckbox
             // 
             this.AutosaveSRAMCheckbox.AutoSize = true;
-            this.AutosaveSRAMCheckbox.Location = new System.Drawing.Point(6, 62);
+            this.AutosaveSRAMCheckbox.Location = new System.Drawing.Point(6, 85);
             this.AutosaveSRAMCheckbox.Name = "AutosaveSRAMCheckbox";
             this.AutosaveSRAMCheckbox.Size = new System.Drawing.Size(15, 14);
             this.AutosaveSRAMCheckbox.TabIndex = 21;
@@ -386,7 +416,7 @@
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.LuaInterfaceRadio);
             this.panel1.Controls.Add(this.NLuaRadio);
-            this.panel1.Location = new System.Drawing.Point(6, 312);
+            this.panel1.Location = new System.Drawing.Point(6, 335);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(377, 61);
             this.panel1.TabIndex = 20;
@@ -425,7 +455,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(27, 270);
+            this.label6.Location = new System.Drawing.Point(27, 293);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(296, 39);
             this.label6.TabIndex = 19;
@@ -436,7 +466,7 @@
             // cbMoviesInAWE
             // 
             this.cbMoviesInAWE.AutoSize = true;
-            this.cbMoviesInAWE.Location = new System.Drawing.Point(6, 250);
+            this.cbMoviesInAWE.Location = new System.Drawing.Point(6, 273);
             this.cbMoviesInAWE.Name = "cbMoviesInAWE";
             this.cbMoviesInAWE.Size = new System.Drawing.Size(262, 17);
             this.cbMoviesInAWE.TabIndex = 18;
@@ -446,7 +476,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(27, 221);
+            this.label5.Location = new System.Drawing.Point(27, 244);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(299, 26);
             this.label5.TabIndex = 17;
@@ -456,7 +486,7 @@
             // cbMoviesOnDisk
             // 
             this.cbMoviesOnDisk.AutoSize = true;
-            this.cbMoviesOnDisk.Location = new System.Drawing.Point(6, 201);
+            this.cbMoviesOnDisk.Location = new System.Drawing.Point(6, 224);
             this.cbMoviesOnDisk.Name = "cbMoviesOnDisk";
             this.cbMoviesOnDisk.Size = new System.Drawing.Size(259, 17);
             this.cbMoviesOnDisk.TabIndex = 16;
@@ -466,7 +496,7 @@
             // LuaDuringTurboCheckbox
             // 
             this.LuaDuringTurboCheckbox.AutoSize = true;
-            this.LuaDuringTurboCheckbox.Location = new System.Drawing.Point(6, 178);
+            this.LuaDuringTurboCheckbox.Location = new System.Drawing.Point(6, 201);
             this.LuaDuringTurboCheckbox.Name = "LuaDuringTurboCheckbox";
             this.LuaDuringTurboCheckbox.Size = new System.Drawing.Size(166, 17);
             this.LuaDuringTurboCheckbox.TabIndex = 15;
@@ -476,7 +506,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(24, 162);
+            this.label12.Location = new System.Drawing.Point(24, 185);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(231, 13);
             this.label12.TabIndex = 14;
@@ -485,7 +515,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(24, 149);
+            this.label13.Location = new System.Drawing.Point(24, 172);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(268, 13);
             this.label13.TabIndex = 13;
@@ -494,7 +524,7 @@
             // FrameAdvSkipLagCheckbox
             // 
             this.FrameAdvSkipLagCheckbox.AutoSize = true;
-            this.FrameAdvSkipLagCheckbox.Location = new System.Drawing.Point(6, 129);
+            this.FrameAdvSkipLagCheckbox.Location = new System.Drawing.Point(6, 152);
             this.FrameAdvSkipLagCheckbox.Name = "FrameAdvSkipLagCheckbox";
             this.FrameAdvSkipLagCheckbox.Size = new System.Drawing.Size(241, 17);
             this.FrameAdvSkipLagCheckbox.TabIndex = 12;
@@ -530,31 +560,13 @@
             this.LogWindowAsConsoleCheckbox.Text = "Create the log window as a console window";
             this.LogWindowAsConsoleCheckbox.UseVisualStyleBackColor = true;
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 16);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(225, 13);
-            this.label9.TabIndex = 28;
-            this.label9.Text = "Save SaveRAM to .AutoSaveRAM.SaveRAM";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(9, 34);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(33, 13);
-            this.label10.TabIndex = 29;
-            this.label10.Text = "every";
-            // 
             // EmuHawkOptions
             // 
             this.AcceptButton = this.OkBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.CancelBtn;
-            this.ClientSize = new System.Drawing.Size(418, 455);
+            this.ClientSize = new System.Drawing.Size(418, 479);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.CancelBtn);
             this.Controls.Add(this.OkBtn);
@@ -625,5 +637,6 @@
 		private System.Windows.Forms.NumericUpDown AutosaveSRAMtextBox;
 		private System.Windows.Forms.Label label10;
 		private System.Windows.Forms.Label label9;
+		private System.Windows.Forms.CheckBox FileNameForSavingCheckBox;
 	}
 }
